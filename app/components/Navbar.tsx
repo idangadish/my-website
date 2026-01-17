@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 type NavLink = {
   href: string;
@@ -10,12 +10,12 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/education', label: 'Education' },
-  { href: '/skills', label: 'Skills' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/education", label: "Education" },
+  { href: "/skills", label: "Skills" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -35,8 +35,8 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200"
             onClick={closeMenu}
           >
@@ -53,8 +53,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors duration-200 ${
                     isActive
-                      ? 'bg-blue-400 text-white dark:bg-blue-400 dark:text-white'
-                      : 'text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:text-blue-300 dark:hover:bg-blue-900/20'
+                      ? "bg-blue-400 text-white dark:bg-blue-400 dark:text-white"
+                      : "text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:text-blue-300 dark:hover:bg-blue-900/20"
                   }`}
                 >
                   {link.label}
@@ -101,8 +101,8 @@ export default function Navbar() {
                     onClick={closeMenu}
                     className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors duration-200 ${
                       isActive
-                        ? 'bg-blue-500 text-white dark:bg-blue-500 dark:text-white'
-                        : 'text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:text-blue-400 dark:hover:bg-blue-900/20'
+                        ? "bg-blue-500 text-white dark:bg-blue-500 dark:text-white"
+                        : "text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:text-blue-400 dark:hover:bg-blue-900/20"
                     }`}
                   >
                     {link.label}
