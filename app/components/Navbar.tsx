@@ -31,13 +31,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-black/10 bg-white/95 backdrop-blur-sm dark:border-white/10 dark:bg-black/95">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
           <Link 
             href="/" 
-            className="text-lg font-semibold text-foreground hover:opacity-80 transition-opacity"
+            className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200"
             onClick={closeMenu}
           >
             My Portfolio
@@ -51,10 +51,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors duration-200 ${
                     isActive
-                      ? 'bg-foreground/10 text-foreground'
-                      : 'text-foreground/80 hover:text-foreground hover:bg-foreground/5'
+                      ? 'bg-blue-400 text-white dark:bg-blue-400 dark:text-white'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:text-blue-300 dark:hover:bg-blue-900/20'
                   }`}
                 >
                   {link.label}
@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-md text-foreground hover:bg-foreground/10 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:bg-blue-50 dark:hover:text-blue-300 dark:hover:bg-blue-900/20 transition-colors duration-200"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -90,7 +90,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-black/10 dark:border-white/10">
+          <div className="md:hidden border-t border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -99,10 +99,10 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={closeMenu}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors duration-200 ${
                       isActive
-                        ? 'bg-foreground/10 text-foreground'
-                        : 'text-foreground/80 hover:text-foreground hover:bg-foreground/5'
+                        ? 'bg-blue-500 text-white dark:bg-blue-500 dark:text-white'
+                        : 'text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:text-blue-400 dark:hover:bg-blue-900/20'
                     }`}
                   >
                     {link.label}
