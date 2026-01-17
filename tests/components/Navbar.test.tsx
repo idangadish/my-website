@@ -18,7 +18,14 @@ describe("Navbar", () => {
 
   it("renders all navigation links", () => {
     render(<Navbar />);
-    const navLinks = ["Home", "About", "Education", "Skills", "Projects", "Contact"];
+    const navLinks = [
+      "Home",
+      "About",
+      "Education",
+      "Skills",
+      "Projects",
+      "Contact",
+    ];
 
     navLinks.forEach((linkText) => {
       const link = screen.getByRole("link", { name: linkText });
